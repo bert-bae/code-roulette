@@ -3,26 +3,24 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Peer-to-Peer Cue System --- Sender</title>
+    <title>Peer-to-Peer Cue System --- Reciever</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Peer-to-Peer Cue System --- Sender</h1>
-
-    <table class="control">
+    <table class="display">
       <tr>
         <td class="title">Status:</td>
         <td class="title">Messages:</td>
       </tr>
       <tr>
         <td>
-          <span style="font-weight: bold">ID: </span>
-          <input
-            type="text"
+          <div
             id="receiver-id"
-            title="Input the ID from receive.html"
-          />
-          <button id="connect-button">Connect</button>
+            style="font-weight: bold;"
+            title="Copy this ID to the input on send.html."
+          >
+            ID:
+          </div>
         </td>
         <td>
           <input
@@ -40,30 +38,16 @@
         <td><div class="message" id="message"></div></td>
       </tr>
       <tr>
-        <td>
-          <button type="button" class="control-button" id="resetButton">
-            Reset
-          </button>
-        </td>
-        <td>
-          <button type="button" class="control-button" id="goButton">Go</button>
-        </td>
+        <td class="display-box standby" id="standby"><h2>Standby</h2></td>
+        <td class="display-box hidden" id="go"><h2>Go</h2></td>
       </tr>
       <tr>
-        <td>
-          <button type="button" class="control-button" id="fadeButton">
-            Fade
-          </button>
-        </td>
-        <td>
-          <button type="button" class="control-button" id="offButton">
-            Off
-          </button>
-        </td>
+        <td class="display-box hidden" id="fade"><h2>Fade</h2></td>
+        <td class="display-box hidden" id="off"><h2>All Off</h2></td>
       </tr>
     </table>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/peerjs/0.3.18/peer.min.js"></script>
-    <script src="peerSend.js"></script>
+    <script src="peerReceive.js"></script>
   </body>
 </html>
