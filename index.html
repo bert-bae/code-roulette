@@ -1,13 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
-  <a href="send.html">Send</a>
-  <a href="receive.html">Receive</a>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div
+      id="receiver-id"
+      style="font-weight: bold;"
+      title="Copy this ID to the input on send.html."
+    >
+      ID:
+    </div>
+    <table class="control">
+      <tr>
+        <td class="title">Status:</td>
+        <td class="title">Messages:</td>
+      </tr>
+      <tr>
+        <td>
+          <span style="font-weight: bold">ID: </span>
+          <input type="text" id="peer-id" />
+          <button id="connect-button">Connect</button>
+        </td>
+        <td>
+          <input
+            type="text"
+            id="sendMessageBox"
+            placeholder="Enter a message"
+          />
+          <button type="button" id="sendButton">Send</button>
+        </td>
+      </tr>
+      <tr>
+        <td><div id="status" class="status"></div></td>
+        <td><div id="message" class="message"></div></td>
+      </tr>
+    </table>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/peerjs/0.3.18/peer.min.js"></script>
+    <script src="peerVideo.js"></script>
+  </body>
 </html>
